@@ -7,8 +7,8 @@ function Chartx({userData}) {
   return (
         <Line
            data={userData}
-           height={300}
-           width={550}
+           height={50}
+           width={100}
         />
   )
 }
