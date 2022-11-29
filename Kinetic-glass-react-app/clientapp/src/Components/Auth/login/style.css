@@ -1,0 +1,11 @@
+.main-bg{
+    background: linear-gradient(125deg, #1d006e, rgba(79, 0, 136, 0.322)) !important;
+    backdrop-filter: blur(1px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    justify-content: center;
+    align-items: center;
+    
+}
+.main-bg-top{
+    background:rgb(48, 48, 48);
+}

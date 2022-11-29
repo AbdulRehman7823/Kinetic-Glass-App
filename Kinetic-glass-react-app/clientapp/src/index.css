@@ -4,13 +4,12 @@
 
 @layer base{
     :root{
-
-        --color-text-base: #ffffff;
-        --color-text-muted: #c7d2fe;
-        --color-text-inverted: #4f4ce5;
-        --color-fill:#4336ca;
-        --color-button-accent: #ffffff;
+        --color-text-base: #3a3a3a; /*header text color*/
+        --color-text-muted: #c7d2fe; /**/
+        --color-text-inverted: #4f4ce5;/*The text color on white background*/
+        --color-fill:#4336ca;/* background color */
+        --color-button-accent: #ffffff; /*primary button whose color is white or other than bg*/
         --color-button-accent-hover:#c7d2fe;
-        --color-button-muted:#4f4ce5;
-    }
+        --color-button-muted:#4f4ce5; /*muted button is button whose color related to the background*/
+    } 
 }

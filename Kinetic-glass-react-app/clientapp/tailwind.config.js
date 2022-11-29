@@ -9,8 +9,8 @@ module.exports = {
       textColor:{
         skin:{
           base:'var(--color-text-base)',
-          muted: 'var(--color-text-muted)',
-          invert: 'var(--color-text-inverted)',
+          muted:'var(--color-text-muted)',
+          inverted:'var(--color-text-inverted)',
         },
       },
       backgroundColor:{

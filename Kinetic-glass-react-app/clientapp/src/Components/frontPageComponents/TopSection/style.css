@@ -1,0 +1,42 @@
+
+
+
+.main{
+    
+    position:absolute;
+    background: linear-gradient(125deg, #1d006e, rgba(79, 0, 136, 0.322)) !important;
+    backdrop-filter: blur(1px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    height: calc(100vh - 80px);   
+     z-index: 2; 
+     width: 100%;
+   
+}
+
+.top-section-bg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:rgb(48, 48, 48);
+    min-height: calc(100vh - 80px);   
+
+}
+
+.topText{
+    text-align: center;
+    display: block;
+    padding-left:20rem;
+    padding-right: 20rem;
+    padding-top:10rem;
+    padding-bottom:2rem;
+}
+.top-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.box{
+    z-index: 3;
+}
