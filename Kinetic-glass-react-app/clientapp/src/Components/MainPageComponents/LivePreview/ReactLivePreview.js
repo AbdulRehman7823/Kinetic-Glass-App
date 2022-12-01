@@ -1,5 +1,4 @@
 import React from "react";
-import { LivePreview, LiveError, LiveProvider, LiveEditor } from "react-live";
 import { RiFileCopyFill } from "react-icons/ri";
 import { FcRefresh } from "react-icons/fc";
 import { BsFileCodeFill } from "react-icons/bs";
@@ -42,9 +41,9 @@ function ReactLivePreview(prop) {
       <AiFillEye className="text-blue-500 ml-2 text-lg"></AiFillEye>
       </div>
       </div>
-      <LiveProvider code={props.code}>
+     
         <div className="w-full p-4 border-2 border-gray-200 rounded my-2">
-          <LivePreview />
+          Preview pending....
         </div>
         <div className=" w-full my-2 flex flex-col">
           <div className="bg-blue-100 border-blue-300 border-2 rounded shadow-xl p-2 mb-2 float-right">
@@ -53,12 +52,11 @@ function ReactLivePreview(prop) {
             <FcRefresh className="mx-2 text-blue-700 border-2 rounded border-blue-400 text-2xl float-right cursor-pointer hover:text-blue-500" />
             <BsFileCodeFill className="mx-2 text-blue-700 border-2 rounded border-blue-400 text-2xl float-right cursor-pointer hover:text-blue-500" />
           </div>
-          <div className="border-blue-500 border-4 rounded ">
-            <LiveEditor  onFocusCapture={(e)=>console.log("assssa")} className="editor scrollbar p-4 max-h-64 overflow-hidden overflow-y-auto" />
+          <div className="border-blue-500 border-4 rounded p-4 ">
+            {props.code}
           </div>
         </div>
-        <LiveError className="bg-gray-800 text-red-400 font-bold w-full p-4" />
-      </LiveProvider>
+       {children}
     </div>
   );
 }

@@ -2,8 +2,39 @@ var express = require("express");
 var router = express.Router();
 var User = require("../../model/user");
 const CryptoJS = require("crypto-js");
-const { sendResetPasswordEmail } = require("../../config/email.service");
-const googleAuth = require("../../middleware/googleAuth")
+const passport = require("passport");
+
+router.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    successRedirect: process.env.CLIENT_URL,
+    failureRedirect: "/login/failed",
+  })
+);
+
+router.get("/login/success", (req, res) => {
+  if (req.user) {
+    console.log(req)
+    res.status(200).json({
+      error:false,
+      message:"Successfully Loged In",
+      user:req.user
+    });
+  } else {
+    res.status(422).json({ error: true, message: "Not Authorized" });
+  }
+});
+
+router.get("/login/failed", (req, res) => {
+  res.status(422).json({ error: true, message: "Login Failure" });
+});
+
+router.get("/google", passport.authenticate("google", ["profile", "email"]));
+router.get("/logout", (req, res) => {
+  req.logout();
+  req.redirect(process.env.CLIENT_URL);
+});
+
 
 router.post("/register", async (req, res) => {
   try {
@@ -48,41 +79,7 @@ router.post("/login", async (req, res) => {
     res.status(500).send({ message: "This user is not registered." });
   }
 });
-router.post("/forgot-password", async (req, res) => {
-  let user = await User.findOne(req.body.email);
-  if (user) {
-    let resetPasswordToken = jwt.sign(user.email, process.env.SECRET_TOKEN);
-    await sendResetPasswordEmail(user.email, resetPasswordToken);
-    res.status(200).send("Email Sent");
-  }
-});
 
-router.post("/reset-password", async (req, res) => {
-  try {
-    let email = await jwt.verify(req.body.token, process.env.SECRET_TOKEN);
-    let user = await User.findOne({ email: email });
-    (user.password = CryptoJS.AES.encrypt(
-      req.body.password,
-      process.env.PASS_SEC
-    ).toString()),
-      await user.save();
-      res.status(200).send(user);
-  } catch (err) {
-    res.status(422).send({ message:err.message });
-  }
-});
 
-router.post("/verify-email", (req, res) => {
-
-});
-router.get("/google-auth", googleAuth);
-router.get("/google/callback", googleAuth, (req, res) => {
-    let user = {
-        email: req.user.email, 
-        username:req.user.displayName
-
-    }
-    console.log(user)
-});
 
 module.exports = router;

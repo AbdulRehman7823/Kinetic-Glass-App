@@ -1,10 +1,15 @@
 import React from "react";
 import img from "./login-bg.png";
 import './style.css'
+import { Link } from "react-router-dom";
 import {FcGoogle} from 'react-icons/fc';
 import {GoMarkGithub} from 'react-icons/go'
 import {FaKickstarter} from 'react-icons/fa'
 function Login() {
+       const googleAuth = ()=>{
+          window.open(`http://localhost:5000/api/auth/google/callback`,"_self");
+       }
+
     const [data, setData] = React.useState({
         username: "",
         password: "",
@@ -92,6 +97,7 @@ function Login() {
 
           <button
             type="button"
+            onClick={googleAuth}
             className="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
           >
             <div className="flex items-center justify-center">
@@ -103,9 +109,12 @@ function Login() {
 
           <p className="mt-8">
             Need an account?
-            <a href="#" className="text-blue-500 hover:text-blue-700 font-semibold">
+
+            <Link to="/register">
+            <a className="text-blue-500 hover:text-blue-700 font-semibold">
               Create an account
             </a>
+            </Link>
           </p>
 
           <p className="text-sm text-gray-500 mt-4">

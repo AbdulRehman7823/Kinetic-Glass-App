@@ -2,8 +2,12 @@ import React from "react";
 import "./style.css";
 import { FcGoogle } from "react-icons/fc";
 import img from './signup-bg.svg'; 
+import { Link } from "react-router-dom";
 import { FaKickstarter } from "react-icons/fa";
 function SignUp() {
+  const googleAuth = ()=>{
+    window.open(`http://localhost:5000/api/auth/google/callback`,"_self");
+ }
 
     const [data, setData] = React.useState({
         username: "",
@@ -95,6 +99,7 @@ function SignUp() {
 
           <button
             type="button"
+            onClick={googleAuth}
             className="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
           >
             <div className="flex items-center justify-center">
@@ -105,12 +110,15 @@ function SignUp() {
 
           <p className="mt-2">
             Already have an account?
+
+            <Link to="/login">
             <a
               href="#"
               className="text-blue-500 hover:text-blue-700 font-semibold"
             >
               Login
             </a>
+            </Link>
           </p>
 
           <p className="text-sm text-gray-500 mt-4">

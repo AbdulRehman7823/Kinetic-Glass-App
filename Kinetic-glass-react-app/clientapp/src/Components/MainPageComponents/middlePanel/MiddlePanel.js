@@ -1,13 +1,9 @@
 import React from 'react'
 import ReactLivePreview from '../LivePreview/ReactLivePreview'
-function MiddlePanel() {
+function MiddlePanel({children}) {
   return (
     <div className="w-full h-full items-center">
-       <ReactLivePreview props={{title:"TextField",description:"lorem lorem lorem ipsumlo lorenasdbkabisd" ,code:"<input ></input>"}}></ReactLivePreview>
-       <ReactLivePreview props={{title:"TextField",description:"lorem lorem lorem ipsumlo lorenasdbkabisd" ,code:"<input ></input>"}}></ReactLivePreview>
-       <ReactLivePreview props={{title:"TextField",description:"lorem lorem lorem ipsumlo lorenasdbkabisd" ,code:"<input ></input>"}}></ReactLivePreview>
-       <ReactLivePreview props={{title:"TextField",description:"lorem lorem lorem ipsumlo lorenasdbkabisd" ,code:"<input ></input>"}}></ReactLivePreview>
-
+      {children}
     </div>
   )
 }

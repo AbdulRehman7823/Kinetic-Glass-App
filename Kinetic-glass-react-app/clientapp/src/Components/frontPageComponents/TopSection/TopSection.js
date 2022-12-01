@@ -2,31 +2,37 @@ import React from "react";
 import Box from "../animationBox/box";
 import UiParticles from "../Particles/UiParticles";
 import "./style.css";
-import NavBar from "../navbar/NavBar";
+import TopNavigation from "../navbar/TopNavigation";
+import {useNavigate} from 'react-router-dom'
+
 function TopSection() {
+    const navigate = useNavigate();
+
   return (
     <>
-      <NavBar></NavBar>
+      <TopNavigation></TopNavigation>
       <div className="top-section-bg">
         <Box className="box" />
         <div className="main">
-          <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto">
-              <div class="flex flex-col text-center w-full mb-12">
-                <h1 class="sm:text-5xl text-3xl font-medium title-font mb-4 text-gray-900 py-5 text-white">
+          <section className="text-gray-600 body-font">
+            <div className="container px-5 py-24 mx-auto">
+              <div className="flex flex-col text-center w-full mb-12">
+                <h1 className="sm:text-5xl text-3xl font-medium title-font mb-4 text-gray-900 py-5 text-white">
                   Create Modern React apps with
                   <h1 className="text-purple-500 sm:text-6xl text-4xl font-bold font-mono">
                     Kinetic Glass
                   </h1>
                 </h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-white px-20">
+                <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-white px-20">
                   Kinetic Glass is a simple, modular and accessible component
                   library that gives you the building blocks you need to build
                   your React applications.
                 </p>
               </div>
-              <div class="flex lg:w-2/3 justify-around items-center w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
-                <button class="inline-flex items-center bg-purple-500 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded text-xl">
+              <div className="flex lg:w-2/3 justify-around items-center w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+                <button 
+                 onClick={()=>navigate("/app")}
+                className="inline-flex items-center bg-purple-500 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded text-xl">
                   <span>Get Started</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +49,9 @@ function TopSection() {
                     />
                   </svg>
                 </button>
-                <button class="inline-flex items-center bg-slate-200 hover:bg-slate-300 text-gray-700 font-bold py-3 px-8 rounded text-xl">
+                <button 
+                  onClick={()=>navigate("/login")}
+                 className="inline-flex items-center bg-slate-200 hover:bg-slate-300 text-gray-700 font-bold py-3 px-8 rounded text-xl">
                   <span>Earning</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +75,7 @@ function TopSection() {
       </div>
     </>
     /* 
-    <section class="text-gray-600 body-font">
+    <section className="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">
       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>

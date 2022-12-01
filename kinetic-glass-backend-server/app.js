@@ -4,17 +4,22 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
-var {jwtStrategy,googleStrategy} = require('./config/passport');
+var cookieSession = require('cookie-session');
 var AuthRouter = require('./routes/user/auth')
 var indexRouter = require('./routes/index');
 var cors = require("cors");
 
-var app = express();
-app.use(cors({ origin: true, credentials: true }));
-
 const dotenv = require("dotenv");
 dotenv.config();
+var passportSetup = require('./Passport');
 
+var app = express();
+
+app.use(cookieSession({ 
+     name:"session",
+     keys:["cyberwolve"], 
+     maxAge:24*60*60*100
+}))
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -28,8 +33,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(passport.initialize());
-passport.use('jwt',jwtStrategy);
-passport.use('google',googleStrategy);
+app.use(passport.session()); 
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+
+
 
 app.use('/', indexRouter);
 app.use('/api/auth',AuthRouter)

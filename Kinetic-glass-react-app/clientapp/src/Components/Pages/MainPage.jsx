@@ -4,14 +4,13 @@ import TopNavigation from '../MainPageComponents/Navigation/TopNavigation/TopNav
 import MainPanel from '../MainPageComponents/mainPanel/MainPanel'
 
 
-function MainPage() {
+function MainPage({children}) {
   return (
     <>
 
     <SideBarNavigation>
     <TopNavigation></TopNavigation>
-     <MainPanel>
-     </MainPanel>
+    {children}
     </SideBarNavigation>
     </>
   )

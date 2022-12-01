@@ -10,7 +10,10 @@ import { FaKickstarter, FaDonate, FaPaintRoller } from "react-icons/fa";
 import { HiTemplate } from "react-icons/hi";
 import { TbWorld } from "react-icons/tb";
 import "./style.css"
+import { useNavigate } from "react-router-dom"
 function SideBarNavigation({children}) {
+
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(true);
   const [submenuOpen, setSubmenuOpen] = React.useState(false);
 
@@ -22,74 +25,77 @@ function SideBarNavigation({children}) {
   const Menus = [
     {
       title: "Get Started",
-      link: ()=> {handler("installation")},
+      link: "/app/get-started",
       icon: <FaKickstarter />,
       submenu: true,
       spacing: true,
       open: true,
       submenuItems: [
         {
+          title: "Introduction",
+          link: "/app/get-started",
+        },
+        {
           title: "Installation",
-          link: ()=>{handler("Installation")},
+          link: "/app/get-started/installation",
         },
         {
           title: "Version",
-          link: ()=>{handler("Version")},
+          link: "/app/get-started/version",
         },
         {
           title: "Comparison",
-          link: ()=>{handler("Comparison")},
+          link: "/app/get-started/comparison",
         },
         {
           title: "Designing Principle",
-          link: ()=>{handler("Designing Principle")},
+          link: "/app/get-started/priciples",
           icon: "",
         },
         {
           title: "Contribution",
-          link: ()=>{handler("Contribution")},
+          link: "/app/get-started/contribution",
           icon: "",
         },
         {
           title: "Earning",
-          link: ()=>{handler("Earning")},
+          link: "/login",
           icon: "",
         },
       ],
     },
     {
       title: "Components",
-      link: ()=>{handler("Components")},
+      link: "/app/components",
       icon: <MdSpaceDashboard />,
       submenu: true,
       spacing: true,
       open: false,
       submenuItems: [
-        { title: "Form Component", link: ()=>{handler("Installation")}, header: true },
-        { title: "Button", link: ()=>{handler("Button")} },
-        { title: "Textfield", link: ()=>{handler("Textfield")} },
-        { title: "CheckBox", link: ()=>{handler("CheckBox")} },
-        { title: "Editable", link: ()=>{handler("Editable")} },
-        { title: "Number Input", link: ()=>{handler("Number Input")} },
-        { title: "Radio", link: ()=>{handler("Radio")} },
-        { title: "Select", link: ()=>{handler("Select")} },
-        { title: "Slider", link: ()=>{handler("Slider")} },
-        { title: "Switch", link: ()=>{handler("Switch")} },
-        { title: "Textarea", link: ()=>{handler("Textarea")} },
-        { title: "Icon Button", link: ()=>{handler("Icon Button")} },
+        { title: "Form Component", link: "/app/components", header: true },
+        { title: "Button", link:"/app/components/form/button" },
+        { title: "Textfield", link: "/app/components/form/textfield" },
+        { title: "CheckBox", link: "/app/components/form/checkbox"},
+        { title: "Editable", link: "/app/components/form/editable"},
+        { title: "Number Input", link: "/app/components/form/numberinput"},
+        { title: "Radio", link: "/app/components/form/radio" },
+        { title: "Select", link: "/app/components/form/select"},
+        { title: "Slider", link: "/app/components/form/slider" },
+        { title: "Textarea", link: "/app/components/form/textarea" },
+        { title: "Icon Button", link: "/app/components/form/iconBtn" },
         {
           title: "Website Components",
-          link: ()=>{handler("General Form")},
+          link: "/app/components/web",
           header: true,
         },
-        { title: "General Form", link: ()=>{handler("General Form")} },
-        { title: "Contact Us Form", link: ()=>{handler("Contact Us Form")} },
-        { title: "Location ContactUs Form", link: ()=>{handler("Location ContactUs Form")} },
-        { title: "Simple Product Card", link: ()=>{handler("Simple Product Card")} },
-        { title: "Detailed Product Card", link: ()=>{handler("Detailed Product Card")} },
-        { title: "Simple Card", link: ()=>{handler("Simple Card")} },
-        { title: "Detailed Card", link: ()=>{handler("Detailed Card")} },
-        { title: "Contained Card", link: ()=>{handler("Contained Card")} },
+        { title: "General Form", link: "/app/components/web/generalForm" },
+        { title: "Contact Us Form", link: "/app/components/web/contactus"  },
+        { title: "Location ContactUs Form", link: "/app/components/web/locationcontactus"  },
+        { title: "Simple Product Card", link: "/app/components/web/simpleproductcard"  },
+        { title: "Detailed Product Card", link: "/app/components/web/detailedproductcard"  },
+        { title: "Simple Card", link: "/app/components/web/simplecard"  },
+        { title: "Detailed Card", link:"/app/components/web/detailedcard"  },
+        { title: "Contained Card", link:"/app/components/web/containedcard"  },
       ],
     },
     {
@@ -105,11 +111,11 @@ function SideBarNavigation({children}) {
         { title: "Glass Theme", link: ()=>{handler("Glass Theme")} },
       ],
     },
-    { title: "Json", link: ()=>{handler("Json")}, icon: <BsFillFileCodeFill /> },
-    { title: "Templates", link: ()=>{handler("Templates")}, icon: <HiTemplate />, spacing: true },
-    { title: "Community", link: ()=>{handler("Community")}, icon: <TbWorld /> },
-    { title: "Support Us", link: ()=>{handler("Support Us")}, icon: <FaDonate /> },
-    { title: "Help?", link: ()=>{handler("Help?")}, icon: <MdHelpCenter /> },
+    { title: "Json", link: "/app/json" },
+    { title: "Templates", link: "/app/templates", icon: <HiTemplate />, spacing: true },
+    { title: "Community", link: "/app/community", icon: <TbWorld /> },
+    { title: "Support Us", link: "/app/support", icon: <FaDonate /> },
+    { title: "Help?", link: "/app/help", icon: <MdHelpCenter /> },
   ];
   return (
     <div className="flex md:flex h-screen ">
@@ -151,7 +157,7 @@ function SideBarNavigation({children}) {
           <input
             type={"search"}
             placeholder="Search"
-            className={`text-base bg-transparent w-full text-gray-700 focus:outline-none mx-3  ${
+            className={`text-base bg-transparent w-full text-gray-700 focus:outline-none outline-none border-none mx-3  ${
               !open && "hidden"
             }`}
           />
@@ -161,7 +167,7 @@ function SideBarNavigation({children}) {
           {Menus.map((menu, index) => (
             <div  key={index}>
               <li
-                 onClick={menu.link}
+                 onClick={()=>{navigate(menu.link)}}
                 key={index}
                 className={`text-gray-700 text-md flex items-center gap-x-4 cursor-pointer p-2 hover:shadow-lg duration-200 hover:bg-gray-500 hover:text-gray-100 rounded-md  ${
                   menu.spacing ? "mt-9" : "mt-2"
@@ -194,7 +200,7 @@ function SideBarNavigation({children}) {
                   {menu.submenuItems.map((submenuItem, index) => (
                     <li
                        key={index}
-                       onClick={submenuItem.link}
+                       onClick={()=>{navigate(submenuItem.link)}}
                       className={`text-gray-700 text-md flex items-center gap-x-4 p-2 rounded-md ${
                         submenuItem.header
                           ? "border-blue-600 text-gray-700 text-md mx-16 my-5 shadow-lg border-2 text-center font-bold "
