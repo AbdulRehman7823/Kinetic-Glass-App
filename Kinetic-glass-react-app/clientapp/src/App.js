@@ -17,7 +17,16 @@ import SideBarNavigation from './Components/MainPageComponents/Navigation/SideBa
  
 import Installation  from './Components/MainPageComponents/InnerComponents/GettingStarted/Installation'
 import Introduction  from './Components/MainPageComponents/InnerComponents/GettingStarted/Introduction'
-
+import Version from './Components/MainPageComponents/InnerComponents/GettingStarted/Version';
+import Comparison from './Components/MainPageComponents/InnerComponents/GettingStarted/Comparison';
+import Priciples from './Components/MainPageComponents/InnerComponents/GettingStarted/Priciples';
+import Button from './Components/MainPageComponents/InnerComponents/Form/Button';
+import TextField from './Components/MainPageComponents/InnerComponents/Form/TextField';
+import CheckBox from './Components/MainPageComponents/InnerComponents/Form/CheckBox';
+import Radio from './Components/MainPageComponents/InnerComponents/Form/Radio';
+import Select from './Components/MainPageComponents/InnerComponents/Form/Select';
+import TextArea from './Components/MainPageComponents/InnerComponents/Form/TextArea';
+import IconButton from './Components/MainPageComponents/InnerComponents/Form/IconButton';
 
 
 function App() {
@@ -50,6 +59,19 @@ function App() {
         {/*Getting Started Routes*/ }
        <Route path={"/app/get-started"} element={<MainPage><Introduction/></MainPage>}></Route>
        <Route path={"/app/get-started/installation"} element={<MainPage><Installation/></MainPage>}></Route>
+       <Route path={"/app/get-started/version"} element={<MainPage><Version/></MainPage>}></Route>
+       <Route path={"/app/get-started/comparison"} element={<MainPage><Comparison/></MainPage>}></Route>
+       <Route path={"/app/get-started/priciples"} element={<MainPage><Priciples/></MainPage>}></Route>
+
+       <Route path={"/app/components"} element={<MainPage><Button/></MainPage>}></Route>
+       <Route path={"/app/components/form/button"} element={<MainPage><Button/></MainPage>}></Route>
+       <Route path={"/app/components/form/textfield"} element={<MainPage><TextField/></MainPage>}></Route>
+       <Route path={"/app/components/form/checkbox"} element={<MainPage><CheckBox/></MainPage>}></Route>
+       <Route path={"/app/components/form/radio"} element={<MainPage><Radio/></MainPage>}></Route>
+       <Route path={"/app/components/form/select"} element={<MainPage><Select/></MainPage>}></Route>
+       <Route path={"/app/components/form/textarea"} element={<MainPage><TextArea/></MainPage>}></Route>
+       <Route path={"/app/components/form/iconBtn"} element={<MainPage><IconButton/></MainPage>}></Route>
+
 
          <Route path="/login" element={<LoginPage/>}/>
          <Route path="/register" element={<RegisterPage/>}/>

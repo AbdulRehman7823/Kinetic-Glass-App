@@ -36,10 +36,6 @@ function SideBarNavigation({children}) {
           link: "/app/get-started",
         },
         {
-          title: "Installation",
-          link: "/app/get-started/installation",
-        },
-        {
           title: "Version",
           link: "/app/get-started/version",
         },

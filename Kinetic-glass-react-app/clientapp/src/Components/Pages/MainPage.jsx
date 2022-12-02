@@ -10,6 +10,7 @@ function MainPage({children}) {
 
     <SideBarNavigation>
     <TopNavigation></TopNavigation>
+    
     {children}
     </SideBarNavigation>
     </>

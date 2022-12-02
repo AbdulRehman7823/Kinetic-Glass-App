@@ -17,13 +17,13 @@ function TopSection() {
           <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
               <div className="flex flex-col text-center w-full mb-12">
-                <h1 className="sm:text-5xl text-3xl font-medium title-font mb-4 text-gray-900 py-5 text-white">
+                <h1 className="sm:text-5xl text-4xl font-bold title-font mb-4 text-gray-100 py-5 text-white">
                   Create Modern React apps with
                   <h1 className="text-purple-500 sm:text-6xl text-4xl font-bold font-mono">
                     Kinetic Glass
                   </h1>
                 </h1>
-                <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-white px-20">
+                <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-lg text-white px-20">
                   Kinetic Glass is a simple, modular and accessible component
                   library that gives you the building blocks you need to build
                   your React applications.
