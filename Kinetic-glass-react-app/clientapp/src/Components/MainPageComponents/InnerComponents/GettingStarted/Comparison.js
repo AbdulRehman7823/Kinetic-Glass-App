@@ -5,6 +5,7 @@ import MiddlePanel from "../../middlePanel/MiddlePanel";
 const Comparison = () => {
   return (
     /**new version */
+    /**this is new commit again from abdul rehman */
     <MainPanel>
       <MiddlePanel>
         <div className="px-4">
