@@ -1,8 +1,9 @@
 {
-  "name": "kinetic-glass-ui",
-  "version": "1.0.0",
+  "name": "@kinetic/kinetic-glass-ui",
+  "version": "0.0.1",
   "description": "Component Library with responsive and usefull components",
   "main": "dist/index.js",
+  "repository": "https://github.com/bornfight/bornfight-react-library",
   "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

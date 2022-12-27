@@ -9,7 +9,7 @@ export const ButtonWrapper = styled.button`
   background-color: #3d47ff;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: #fff;   
   &:hover {
     opacity: 0.9;
     transition: 0.2s;
