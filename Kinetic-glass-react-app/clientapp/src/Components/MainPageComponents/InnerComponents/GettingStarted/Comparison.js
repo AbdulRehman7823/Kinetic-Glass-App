@@ -4,6 +4,7 @@ import MiddlePanel from "../../middlePanel/MiddlePanel";
 
 const Comparison = () => {
   return (
+    /**new version */
     <MainPanel>
       <MiddlePanel>
         <div className="px-4">
