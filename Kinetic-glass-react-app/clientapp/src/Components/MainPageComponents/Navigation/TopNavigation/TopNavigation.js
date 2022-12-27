@@ -10,15 +10,15 @@ function TopNavigation() {
   return (
     <div className="w-full p-2 sticky top-0 bg-gray-100 flex flex-row justify-center opacity-95">
           <div className="flex flex-row justify-center ml-auto">
-          <button onClick={()=>{navigate("/app/get-started")}} className="mx-2  duration-300 hover:bg-gray-600 hover:text-gray-100 hover:shadow-xl text-gray-700 font-bold py-2 px-4 rounded inline-flex items-center">
+          <button onClick={()=>navigate("/app/get-started")} className="mx-2  duration-300 hover:bg-gray-600 hover:text-gray-100 hover:shadow-xl text-gray-700 font-bold py-2 px-4 rounded inline-flex items-center">
               <HiDocumentText className="text-xl text-blue-700 hover:text-blue-500"></HiDocumentText>
               <span className="pl-2">Docs</span>
          </button>
-         <button nClick={()=>{navigate("/app/components")}} className="mx-2 duration-300 hover:bg-gray-600 hover:text-gray-100 hover:shadow-xl text-gray-700 font-bold py-2 px-4 rounded inline-flex items-center">
+         <button onClick={()=>{navigate("/app/components")}} className="mx-2 duration-300 hover:bg-gray-600 hover:text-gray-100 hover:shadow-xl text-gray-700 font-bold py-2 px-4 rounded inline-flex items-center">
               <BsUiChecksGrid className="text-xl text-blue-700 hover:text-blue-500"></BsUiChecksGrid>
               <span className="pl-2">Components</span>
          </button>
-         <button nClick={()=>{navigate("/app/web-components")}} className="mx-2 duration-300 hover:bg-gray-600 hover:text-gray-100 hover:shadow-xl text-gray-700 font-bold py-2 px-4 rounded inline-flex items-center">
+         <button onClick={()=>{navigate("/app/web-components")}} className="mx-2 duration-300 hover:bg-gray-600 hover:text-gray-100 hover:shadow-xl text-gray-700 font-bold py-2 px-4 rounded inline-flex items-center">
               <CgWebsite className="text-xl text-blue-700 hover:text-blue-500"></CgWebsite>
               <span className="pl-2">Blogs</span>
          </button>

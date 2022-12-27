@@ -4,6 +4,19 @@ import MainPanel from "../../mainPanel/MainPanel";
 import MiddlePanel from "../../middlePanel/MiddlePanel";
 
 const TextField = () => {
+
+  const code = `<TextField props={{
+    label:{
+        text:"label",
+        class:"",
+    },
+    input:{
+        type:"text",
+        class:"",
+        placeholder:"username",
+        required:false,
+    }
+  }}/>`
   return (
     <MainPanel>
       <MiddlePanel>
@@ -13,7 +26,7 @@ const TextField = () => {
               title: "TextField",
               description:
                 "Text Fields let users enter and edit text.",
-              code: "",
+              code: {code},
             }}
           />{" "}
         </div>

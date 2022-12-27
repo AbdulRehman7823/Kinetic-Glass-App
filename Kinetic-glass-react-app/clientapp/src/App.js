@@ -28,6 +28,7 @@ import Select from './Components/MainPageComponents/InnerComponents/Form/Select'
 import TextArea from './Components/MainPageComponents/InnerComponents/Form/TextArea';
 import IconButton from './Components/MainPageComponents/InnerComponents/Form/IconButton';
 
+import {BlogImageCard} from 'kinetic-glass-ui'
 
 function App() {
   
@@ -52,11 +53,43 @@ function App() {
     },[]
   )
 
+
+
+  const data =  {
+    title: {
+      text: "HeadPhones",
+      class: "",
+    },
+    img: {
+      url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80",
+      class: "",
+    },
+    body: {
+      text: "lorejnjka njkfkadufna",
+      class: "",
+    },
+    header: {
+      text: "Not Mention",
+      class: "",
+    },
+    button: {
+      text: "not given",
+      class: "",
+    },
+    views: {
+      text: "0.0",
+      class: "",
+    },
+  }
+
   return (
+  
+    
+
  
     <Router>
        <Routes>      
-        {/*Getting Started Routes*/ }
+        {/*Getting Started Routes*/}
        <Route path={"/app/get-started"} element={<MainPage><Introduction/></MainPage>}></Route>
        <Route path={"/app/get-started/installation"} element={<MainPage><Installation/></MainPage>}></Route>
        <Route path={"/app/get-started/version"} element={<MainPage><Version/></MainPage>}></Route>
@@ -84,6 +117,7 @@ function App() {
          <Route path="*" element={<ErrorPage/>}/>
        </Routes>
   </Router>
+  
   );
   
   
